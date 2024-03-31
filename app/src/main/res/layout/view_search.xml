@@ -63,7 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="240dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/post5"/>
+                android:src="@drawable/post5"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 
@@ -76,7 +77,8 @@
                 android:layout_width="165dp"
                 android:layout_height="240dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/post6"/>
+                android:src="@drawable/post6"
+                android:layout_gravity="center"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
