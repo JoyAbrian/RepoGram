@@ -4,5 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|fill_horizontal"
+        android:background="#FBFBFB">
+
+        <ImageView
+            android:id="@+id/toggleHome"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/round_home"/>
+
+        <ImageView
+            android:id="@+id/toggleSearch"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/round_search"/>
+
+        <ImageView
+            android:id="@+id/toggleAdd"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/round_add"/>
+
+        <ImageView
+            android:id="@+id/toggleReels"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/round_reels"/>
+
+        <ImageView
+            android:id="@+id/toggleProfile"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/round_profile"/>
+
+    </LinearLayout>
+
 </LinearLayout>
