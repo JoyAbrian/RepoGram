@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F1F1F1">
+
+        <ImageButton
+            android:id="@+id/buttonDrawerToggle"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo"
+            android:background="@android:color/transparent"
+            android:layout_gravity="start"/>
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+</LinearLayout>
