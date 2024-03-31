@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <!-- Included layout at the top -->
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+<!--        CHANGE THIS LATER-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <include
+            android:id="@+id/footer"
+            layout="@layout/footer_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </LinearLayout>
