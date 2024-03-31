@@ -13,7 +13,7 @@
             android:layout_width="140dp"
             android:layout_height="50dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/logo"
+            android:src="@drawable/header_logo"
             android:background="@android:color/transparent"
             android:layout_gravity="start"/>
 
@@ -29,14 +29,14 @@
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
-                android:src="@drawable/round_notification"/>
+                android:src="@drawable/header_notification"/>
 
             <ImageView
                 android:id="@+id/buttonChat"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
-                android:src="@drawable/round_chat"/>
+                android:src="@drawable/header_chat"/>
 
         </LinearLayout>
 

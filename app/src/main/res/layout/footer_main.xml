@@ -15,35 +15,35 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/round_home"/>
+            android:src="@drawable/footer_home"/>
 
         <ImageView
             android:id="@+id/toggleSearch"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/round_search"/>
+            android:src="@drawable/footer_search"/>
 
         <ImageView
             android:id="@+id/toggleAdd"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/round_add"/>
+            android:src="@drawable/footer_add"/>
 
         <ImageView
             android:id="@+id/toggleReels"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/round_reels"/>
+            android:src="@drawable/footer_reels"/>
 
         <ImageView
             android:id="@+id/toggleProfile"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/round_profile"/>
+            android:src="@drawable/footer_profile"/>
 
     </LinearLayout>
 
