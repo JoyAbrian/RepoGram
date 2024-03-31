@@ -10,7 +10,6 @@
         android:background="#FBFBFB">
 
         <ImageButton
-            android:id="@+id/buttonDrawerToggle"
             android:layout_width="140dp"
             android:layout_height="50dp"
             android:scaleType="fitCenter"
@@ -26,16 +25,19 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/buttonNotification"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
                 android:src="@drawable/round_notification"/>
 
             <ImageView
+                android:id="@+id/buttonChat"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
                 android:src="@drawable/round_chat"/>
+
         </LinearLayout>
 
 
