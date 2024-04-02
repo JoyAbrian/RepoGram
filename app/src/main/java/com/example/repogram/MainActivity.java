@@ -21,21 +21,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         activeFooterItems = findViewById(R.id.toggleHome);
-        toggleHome = findViewById(R.id.toggleHome);
         toggleSearch = findViewById(R.id.toggleSearch);
         toggleAdd = findViewById(R.id.toggleAdd);
         toggleReels = findViewById(R.id.toggleReels);
         toggleProfile = findViewById(R.id.toggleProfile);
 
         activeFooterItems.setImageResource(R.drawable.footer_home_active);
-
-        toggleHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         toggleSearch.setOnClickListener(new View.OnClickListener() {
             @Override

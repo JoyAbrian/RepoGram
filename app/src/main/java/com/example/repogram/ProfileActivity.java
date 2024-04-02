@@ -16,7 +16,6 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView toggleSearch;
     ImageView toggleAdd;
     ImageView toggleReels;
-    ImageView toggleProfile;
 
     TextView username;
     CircleImageView profilePicture;
@@ -43,7 +42,6 @@ public class ProfileActivity extends AppCompatActivity {
         toggleSearch = findViewById(R.id.toggleSearch);
         toggleAdd = findViewById(R.id.toggleAdd);
         toggleReels = findViewById(R.id.toggleReels);
-        toggleProfile = findViewById(R.id.toggleProfile);
 
         username = findViewById(R.id.profileUsername);
         profilePicture = findViewById(R.id.profilePicture);
@@ -123,35 +121,6 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, SearchActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        toggleProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String EXTRA_USERNAME = "joyrantepasang";
-                Integer EXTRA_PICTURE = R.drawable.profile_anonym;
-                String EXTRA_POST = "5";
-                String EXTRA_FOLLOWERS = "537";
-                String EXTRA_FOLLOWING = "530";
-                Integer EXTRA_POST1 = R.drawable.profile_joyrantepasang_post1;
-                Integer EXTRA_POST2 = R.drawable.profile_joyrantepasang_post2;
-                Integer EXTRA_POST3 = R.drawable.profile_joyrantepasang_post3;
-                Integer EXTRA_POST4 = R.drawable.profile_joyrantepasang_post4;
-                Integer EXTRA_POST5 = R.drawable.profile_joyrantepasang_post5;
-
-                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-                intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-                intent.putExtra("EXTRA_POST", EXTRA_POST);
-                intent.putExtra("EXTRA_FOLLOWERS", EXTRA_FOLLOWERS);
-                intent.putExtra("EXTRA_FOLLOWING", EXTRA_FOLLOWING);
-                intent.putExtra("post1", EXTRA_POST1);
-                intent.putExtra("post2", EXTRA_POST2);
-                intent.putExtra("post3", EXTRA_POST3);
-                intent.putExtra("post4", EXTRA_POST4);
-                intent.putExtra("post5", EXTRA_POST5);
                 startActivity(intent);
             }
         });

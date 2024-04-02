@@ -37,14 +37,6 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        toggleSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, SearchActivity.class);
-                startActivity(intent);
-            }
-        });
-
         toggleProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
