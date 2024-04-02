@@ -27,7 +27,7 @@ public class SearchActivity extends AppCompatActivity {
         toggleReels = findViewById(R.id.toggleReels);
         toggleProfile = findViewById(R.id.toggleProfile);
 
-        activeFooterItems.setImageResource(R.drawable.footer_profile_active);
+        activeFooterItems.setImageResource(R.drawable.footer_search_active);
 
         toggleHome.setOnClickListener(new View.OnClickListener() {
             @Override

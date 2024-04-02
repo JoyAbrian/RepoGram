@@ -60,6 +60,8 @@ public class ProfileActivity extends AppCompatActivity {
         post8 = findViewById(R.id.post8);
         post9 = findViewById(R.id.post9);
 
+        activeFooterItems.setImageResource(R.drawable.footer_profile_active);
+
         String EXTRA_USERNAME = getIntent().getStringExtra("EXTRA_USERNAME");
         Integer EXTRA_PICTURE = getIntent().hasExtra("EXTRA_PICTURE") ? getIntent().getIntExtra("EXTRA_PICTURE", 1) : null;
         String EXTRA_POST = getIntent().getStringExtra("EXTRA_POST");
@@ -108,7 +110,6 @@ public class ProfileActivity extends AppCompatActivity {
             post9.setImageResource(EXTRA_POST9.intValue());
         }
 
-        activeFooterItems.setImageResource(R.drawable.footer_search_active);
 
         toggleHome.setOnClickListener(new View.OnClickListener() {
             @Override
