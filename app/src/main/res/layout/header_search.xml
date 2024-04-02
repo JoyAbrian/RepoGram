@@ -6,16 +6,16 @@
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#FBFBFB">
 
         <ImageButton
             android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/header_searchbar"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
             android:background="@android:color/transparent"
-            android:layout_gravity="center"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/header_searchbar" />
 
     </androidx.appcompat.widget.Toolbar>
 
