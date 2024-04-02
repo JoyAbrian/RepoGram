@@ -61,7 +61,7 @@ public class ProfileActivity extends AppCompatActivity {
         post9 = findViewById(R.id.post9);
 
         String EXTRA_USERNAME = getIntent().getStringExtra("EXTRA_USERNAME");
-        Integer EXTRA_PICTURE = getIntent().getIntExtra("EXTRA_PICTURE", 1);
+        Integer EXTRA_PICTURE = getIntent().hasExtra("EXTRA_PICTURE") ? getIntent().getIntExtra("EXTRA_PICTURE", 1) : null;
         String EXTRA_POST = getIntent().getStringExtra("EXTRA_POST");
         String EXTRA_FOLLOWERS = getIntent().getStringExtra("EXTRA_FOLLOWERS");
         String EXTRA_FOLLOWING = getIntent().getStringExtra("EXTRA_FOLLOWING");
@@ -80,15 +80,33 @@ public class ProfileActivity extends AppCompatActivity {
         posts.setText(EXTRA_POST);
         followers.setText(EXTRA_FOLLOWERS);
         following.setText(EXTRA_FOLLOWING);
-        post1.setImageResource(EXTRA_POST1);
-        post2.setImageResource(EXTRA_POST2);
-        post3.setImageResource(EXTRA_POST3);
-        post4.setImageResource(EXTRA_POST4);
-        post5.setImageResource(EXTRA_POST5);
-        post6.setImageResource(EXTRA_POST6);
-        post7.setImageResource(EXTRA_POST7);
-        post8.setImageResource(EXTRA_POST8);
-        post9.setImageResource(EXTRA_POST9);
+        if (EXTRA_POST1 != null) {
+            post1.setImageResource(EXTRA_POST1.intValue());
+        }
+        if (EXTRA_POST2 != null) {
+            post2.setImageResource(EXTRA_POST2.intValue());
+        }
+        if (EXTRA_POST3 != null) {
+            post3.setImageResource(EXTRA_POST3.intValue());
+        }
+        if (EXTRA_POST4 != null) {
+            post4.setImageResource(EXTRA_POST4.intValue());
+        }
+        if (EXTRA_POST5 != null) {
+            post5.setImageResource(EXTRA_POST5.intValue());
+        }
+        if (EXTRA_POST6 != null) {
+            post6.setImageResource(EXTRA_POST6.intValue());
+        }
+        if (EXTRA_POST7 != null) {
+            post7.setImageResource(EXTRA_POST7.intValue());
+        }
+        if (EXTRA_POST8 != null) {
+            post8.setImageResource(EXTRA_POST8.intValue());
+        }
+        if (EXTRA_POST9 != null) {
+            post9.setImageResource(EXTRA_POST9.intValue());
+        }
 
         activeFooterItems.setImageResource(R.drawable.footer_search_active);
 
@@ -136,6 +154,5 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

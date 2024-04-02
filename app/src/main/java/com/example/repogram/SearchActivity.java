@@ -46,7 +46,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         toggleProfile.setOnClickListener(new View.OnClickListener() {
-        @Override
+            @Override
             public void onClick(View v) {
                 String EXTRA_USERNAME = "joyrantepasang";
                 Integer EXTRA_PICTURE = R.drawable.profile_anonym;
@@ -65,11 +65,11 @@ public class SearchActivity extends AppCompatActivity {
                 intent.putExtra("EXTRA_POST", EXTRA_POST);
                 intent.putExtra("EXTRA_FOLLOWERS", EXTRA_FOLLOWERS);
                 intent.putExtra("EXTRA_FOLLOWING", EXTRA_FOLLOWING);
-                intent.putExtra("post1", EXTRA_POST1);
-                intent.putExtra("post2", EXTRA_POST2);
-                intent.putExtra("post3", EXTRA_POST3);
-                intent.putExtra("post4", EXTRA_POST4);
-                intent.putExtra("post5", EXTRA_POST5);
+                intent.putExtra("EXTRA_POST1", EXTRA_POST1);
+                intent.putExtra("EXTRA_POST2", EXTRA_POST2);
+                intent.putExtra("EXTRA_POST3", EXTRA_POST3);
+                intent.putExtra("EXTRA_POST4", EXTRA_POST4);
+                intent.putExtra("EXTRA_POST5", EXTRA_POST5);
                 startActivity(intent);
             }
         });
