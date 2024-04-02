@@ -21,7 +21,8 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center"
-            android:src="@drawable/story_circle"/>
+            android:background="@drawable/layout_circle"
+            android:scaleType="centerCrop"/>
 
     </FrameLayout>
 
