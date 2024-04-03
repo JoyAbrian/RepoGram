@@ -141,6 +141,13 @@ public class PostActivity extends AppCompatActivity {
         postComment.setText(String.valueOf(comment_size));
         postDate.setText(times[random.nextInt(comments.length)]);
 
+        postHeart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                postHeart.setImageResource(R.drawable.post_like_active);
+            }
+        });
+
         // Comments Section
         for (int i = 0; i < comment_size; i++ ) {
             View commentView = LayoutInflater.from(this).inflate(R.layout.template_comment, null);
