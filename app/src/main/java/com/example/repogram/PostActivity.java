@@ -117,7 +117,7 @@ public class PostActivity extends AppCompatActivity {
             userName.setText(commentator.getUserName());
             userTime.setText(times[random.nextInt(times.length)]);
             userComment.setText(comments[random.nextInt(comments.length)]);
-            userLikes.setText(String.valueOf(random.nextInt(500)));
+            userLikes.setText(String.valueOf(random.nextInt(99)));
 
             parents.addView(commentView);
         }
