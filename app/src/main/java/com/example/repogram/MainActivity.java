@@ -26,12 +26,18 @@ public class MainActivity extends AppCompatActivity {
         toggleAdd = findViewById(R.id.toggleAdd);
         toggleReels = findViewById(R.id.toggleReels);
         toggleProfile = findViewById(R.id.toggleProfile);
-
         RecyclerView rvPosts = findViewById(R.id.rvPosts);
+        RecyclerView rvStories = findViewById(R.id.rvStories);
+
+        rvStories.setHasFixedSize(true);
+        rvStories.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        StoriesAdapter storiesAdapter = new StoriesAdapter(DataSource.accounts);
+        rvStories.setAdapter(storiesAdapter);
+
         rvPosts.setHasFixedSize(true);
         rvPosts.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        PostsAdapter adapter = new PostsAdapter(DataSource.accounts);
-        rvPosts.setAdapter(adapter);
+        PostsAdapter postsAdapter = new PostsAdapter(DataSource.accounts);
+        rvPosts.setAdapter(postsAdapter);
 
         activeFooterItems.setImageResource(R.drawable.footer_home_active);
 
