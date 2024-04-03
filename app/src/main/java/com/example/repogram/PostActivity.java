@@ -3,28 +3,17 @@ package com.example.repogram;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostActivity extends AppCompatActivity {
-    CircleImageView profilePicture = findViewById(R.id.profilePicture);
-    TextView profileUsername = findViewById(R.id.profileUsername);
-    ImageView postImage = findViewById(R.id.postImage);
-    ImageView postHeart = findViewById(R.id.postHeart);
-    TextView postLike = findViewById(R.id.postLike);
-    TextView postUsername = findViewById(R.id.postUsername);
-    TextView postCaption = findViewById(R.id.postCaption);
-    TextView postComment = findViewById(R.id.postComment);
-    TextView postDate = findViewById(R.id.postDate);
-
-
-    CircleImageView userPicture = findViewById(R.id.userPicture);
-    TextView userName = findViewById(R.id.userName);
-    TextView userTime = findViewById(R.id.userTime);
-    TextView userComment = findViewById(R.id.userComment);
-
     Commentator commentator1 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
     Commentator commentator2 = new Commentator(R.drawable.post_commentator2, "ccky_07");
     Commentator commentator3 = new Commentator(R.drawable.post_commentator3, "staenly_bombong");
@@ -94,10 +83,43 @@ public class PostActivity extends AppCompatActivity {
             "Belum tau Mio Mirza",
             "Jafar"
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+        LinearLayout parents = findViewById(R.id.parents);
+        CircleImageView profilePicture = findViewById(R.id.profilePicture);
+        TextView profileUsername = findViewById(R.id.profileUsername);
+        ImageView postImage = findViewById(R.id.postImage);
+        ImageView postHeart = findViewById(R.id.postHeart);
+        TextView postLike = findViewById(R.id.postLike);
+        TextView postUsername = findViewById(R.id.postUsername);
+        TextView postCaption = findViewById(R.id.postCaption);
+        TextView postComment = findViewById(R.id.postComment);
+        TextView postDate = findViewById(R.id.postDate);
+
+
+        // Comments Section
+        Random random = new Random();
+        Integer comment_size = random.nextInt(10) + 1;
+        for (int i = 0; i < comment_size; i++ ) {
+            View commentView = LayoutInflater.from(this).inflate(R.layout.template_comment, null);
+            Commentator commentator = commentators[random.nextInt(commentators.length)];
+
+            CircleImageView userPicture = commentView.findViewById(R.id.userPicture);
+            TextView userName = commentView.findViewById(R.id.userName);
+            TextView userTime = commentView.findViewById(R.id.userTime);
+            TextView userComment = commentView.findViewById(R.id.userComment);
+            TextView userLikes = commentView.findViewById(R.id.userLikes);
+
+            userPicture.setImageResource(commentator.getUserPicture());
+            userName.setText(commentator.getUserName());
+            userTime.setText(times[random.nextInt(times.length)]);
+            userComment.setText(comments[random.nextInt(comments.length)]);
+            userLikes.setText(String.valueOf(random.nextInt(500)));
+
+            parents.addView(commentView);
+        }
     }
 }

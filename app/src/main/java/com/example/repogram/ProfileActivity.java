@@ -80,6 +80,13 @@ public class ProfileActivity extends AppCompatActivity {
         following.setText(EXTRA_FOLLOWING);
         if (EXTRA_POST1 != null) {
             post1.setImageResource(EXTRA_POST1.intValue());
+            post1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
         if (EXTRA_POST2 != null) {
             post2.setImageResource(EXTRA_POST2.intValue());

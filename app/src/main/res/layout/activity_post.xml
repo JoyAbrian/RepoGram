@@ -22,15 +22,13 @@
             android:layout_weight="1">
 
             <LinearLayout
+                android:id="@+id/parents"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <include
                     layout="@layout/template_post"/>
-
-                <include
-                    layout="@layout/template_comment"/>
 
             </LinearLayout>
 
