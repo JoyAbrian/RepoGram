@@ -7,9 +7,19 @@ import androidx.annotation.NonNull;
 
 public class Account implements Parcelable {
     private String username, posts, followers, following;
-    private Integer profilePicture, post1, post2, post3, post4, post5, post6, post7, post8, post9;
+    private Integer profilePicture;
+    private Integer post1;
+    private Integer post2;
+    private Integer post3;
+    private Integer post4;
+    private Integer post5;
+    private Integer post6;
+    private Integer post7;
+    private Integer post8;
+    private Integer post9;
+    private Integer story;
 
-    public Account(String username, String posts, String followers, String following, Integer profilePicture, Integer post1, Integer post2, Integer post3, Integer post4, Integer post5, Integer post6, Integer post7, Integer post8, Integer post9) {
+    public Account(String username, String posts, String followers, String following, Integer profilePicture, Integer post1, Integer post2, Integer post3, Integer post4, Integer post5, Integer post6, Integer post7, Integer post8, Integer post9, Integer story) {
         this.username = username;
         this.posts = posts;
         this.followers = followers;
@@ -24,6 +34,7 @@ public class Account implements Parcelable {
         this.post7 = post7;
         this.post8 = post8;
         this.post9 = post9;
+        this.story = story;
     }
 
     protected Account(Parcel in) {
@@ -81,7 +92,24 @@ public class Account implements Parcelable {
         } else {
             post9 = in.readInt();
         }
+        if (in.readByte() == 0) {
+            story = null;
+        } else {
+            story = in.readInt();
+        }
     }
+
+    public static final Creator<Account> CREATOR = new Creator<Account>() {
+        @Override
+        public Account createFromParcel(Parcel in) {
+            return new Account(in);
+        }
+
+        @Override
+        public Account[] newArray(int size) {
+            return new Account[size];
+        }
+    };
 
     public String getUsername() {
         return username;
@@ -195,6 +223,14 @@ public class Account implements Parcelable {
         this.post9 = post9;
     }
 
+    public Integer getStory() {
+        return story;
+    }
+
+    public void setStory(Integer story) {
+        this.story = story;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -266,17 +302,11 @@ public class Account implements Parcelable {
             dest.writeByte((byte) 1);
             dest.writeInt(post9);
         }
+        if (story == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(story);
+        }
     }
-
-    public static final Creator<Account> CREATOR = new Creator<Account>() {
-        @Override
-        public Account createFromParcel(Parcel in) {
-            return new Account(in);
-        }
-
-        @Override
-        public Account[] newArray(int size) {
-            return new Account[size];
-        }
-    };
 }
