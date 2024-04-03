@@ -25,18 +25,21 @@ public class PostActivity extends AppCompatActivity {
     TextView userTime = findViewById(R.id.userTime);
     TextView userComment = findViewById(R.id.userComment);
 
+    Commentator[] commentators = {
+
+    }
     Commentator commentator1 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
-    Commentator commentator2 = new Commentator(R.drawable., "ccky_07");
-    Commentator commentator3 = new Commentator(R.drawable., "staenly_bombong");
+    Commentator commentator2 = new Commentator(R.drawable.post_commentator2, "ccky_07");
+    Commentator commentator3 = new Commentator(R.drawable.post_commentator3, "staenly_bombong");
     Commentator commentator4 = new Commentator(R.drawable.profile_anonym, "abd.rafiqanwar");
-    Commentator commentator5 = new Commentator(R.drawable., "ichsan.it");
-    Commentator commentator6 = new Commentator(R.drawable., "exyrzn");
-    Commentator commentator7 = new Commentator(R.drawable., "xii_mipa3");
-    Commentator commentator8 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
-    Commentator commentator9 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
-    Commentator commentator10 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
-    Commentator commentator11 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
-    Commentator commentator12 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
+    Commentator commentator5 = new Commentator(R.drawable.post_commentator5, "ichsan.it");
+    Commentator commentator6 = new Commentator(R.drawable.post_commentator6, "exyrzn");
+    Commentator commentator7 = new Commentator(R.drawable.post_commentator7, "xii_mipa3");
+    Commentator commentator8 = new Commentator(R.drawable.post_commentator8, "reskyallodatu");
+    Commentator commentator9 = new Commentator(R.drawable.post_commentator9, "dccal_");
+    Commentator commentator10 = new Commentator(R.drawable.post_commentator10, "labsisfo.uh");
+    Commentator commentator11 = new Commentator(R.drawable.post_commentator11, "grntgina");
+    Commentator commentator12 = new Commentator(R.drawable.post_commentator12, "putar_put");
 
     String[] times = {
             "20 menit",
