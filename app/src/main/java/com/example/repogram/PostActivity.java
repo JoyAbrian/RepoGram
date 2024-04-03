@@ -148,6 +148,8 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
+        
+
         // Comments Section
         for (int i = 0; i < comment_size; i++ ) {
             View commentView = LayoutInflater.from(this).inflate(R.layout.template_comment, null);
