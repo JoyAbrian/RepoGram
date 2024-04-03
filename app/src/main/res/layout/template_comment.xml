@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:paddingVertical="15dp"
+    android:paddingHorizontal="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userPicture"
@@ -64,7 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="10dp"
         android:orientation="vertical">
 
         <ImageView
