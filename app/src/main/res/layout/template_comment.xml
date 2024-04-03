@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userPicture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/profile_anonym"
+        android:layout_gravity="top"/>
+
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/userPicture"
+        android:text="username"
+        android:textColor="#2B2B2B"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/userTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"
+        android:textColor="#8C8C8C"
+        android:layout_marginLeft="7dp"
+        android:layout_toRightOf="@id/userName"/>
+
+    <TextView
+        android:id="@+id/userComment"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:text="comments"
+        android:layout_below="@id/userName"
+        android:layout_toRightOf="@id/userPicture"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/balas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userComment"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/userPicture"
+        android:text="Balas"
+        android:textColor="#959595" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lihat Terjemahan"
+        android:layout_below="@id/userComment"
+        android:layout_toRightOf="@id/balas"
+        android:layout_marginLeft="10dp"
+        android:textColor="#959595" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/header_heart"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="69"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
