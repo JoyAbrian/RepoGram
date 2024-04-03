@@ -25,9 +25,6 @@ public class PostActivity extends AppCompatActivity {
     TextView userTime = findViewById(R.id.userTime);
     TextView userComment = findViewById(R.id.userComment);
 
-    Commentator[] commentators = {
-
-    }
     Commentator commentator1 = new Commentator(R.drawable.profile_anonym, "mayko_raditya");
     Commentator commentator2 = new Commentator(R.drawable.post_commentator2, "ccky_07");
     Commentator commentator3 = new Commentator(R.drawable.post_commentator3, "staenly_bombong");
@@ -40,7 +37,29 @@ public class PostActivity extends AppCompatActivity {
     Commentator commentator10 = new Commentator(R.drawable.post_commentator10, "labsisfo.uh");
     Commentator commentator11 = new Commentator(R.drawable.post_commentator11, "grntgina");
     Commentator commentator12 = new Commentator(R.drawable.post_commentator12, "putar_put");
+    Commentator commentator13 = new Commentator(R.drawable.post_commentator13, "andisalwan2in");
+    Commentator commentator14 = new Commentator(R.drawable.post_commentator14, "ruukaze");
+    Commentator commentator15 = new Commentator(R.drawable.post_commentator15, "yippiayo");
+    Commentator commentator16 = new Commentator(R.drawable.profile_anonym, "fqasanb");
 
+    Commentator[] commentators = {
+        commentator1,
+        commentator2,
+        commentator3,
+        commentator4,
+        commentator5,
+        commentator6,
+        commentator7,
+        commentator8,
+        commentator9,
+        commentator10,
+        commentator11,
+        commentator12,
+        commentator13,
+        commentator14,
+        commentator15,
+        commentator16,
+    };
     String[] times = {
             "20 menit",
             "39 menit",
@@ -62,6 +81,8 @@ public class PostActivity extends AppCompatActivity {
             "Perfection! 👌",
             "Bagus banget! 😍",
             "Keren! 👍",
+            "Lu keren bang",
+            "Tolol",
             "Keren parah! 🔥",
             "Mantap jiwa! 💯",
             "Wah, keren banget! 🌟",
