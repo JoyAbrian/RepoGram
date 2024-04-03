@@ -83,12 +83,41 @@ public class PostActivity extends AppCompatActivity {
             "Belum tau Mio Mirza",
             "Jafar"
     };
+
+    String[] captions = {
+            "Live, laugh, love. 💫",
+            "Chasing dreams and sunsets. 🌅",
+            "Adventure awaits! 🌿",
+            "Good vibes only. ✌️",
+            "Embracing the journey. 🌟",
+            "Making memories one day at a time. 📸",
+            "Stay wild, moon child. 🌙",
+            "Sun-kissed and happy. ☀️",
+            "Not all who wander are lost. 🌍",
+            "Radiate positivity. 🌈",
+            "Living for the moments that take your breath away. 💖",
+            "Collecting moments, not things. 🌼",
+            "Happiness is homemade. 🏡",
+            "Keepin' it real. 🙌",
+            "Find joy in the ordinary. ✨",
+            "Life's a journey, not a destination. 🌌",
+            "Everyday magic. ✨",
+            "Do more things that make you forget to check your phone. 📵",
+            "Feelin' good, livin' better. 😎",
+            "Let's wander where the WiFi is weak. 📶"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
+        Random random = new Random();
+        Integer comment_size = random.nextInt(10) + 1;
+
         LinearLayout parents = findViewById(R.id.parents);
+
+        // Post Section
         CircleImageView profilePicture = findViewById(R.id.profilePicture);
         TextView profileUsername = findViewById(R.id.profileUsername);
         ImageView postImage = findViewById(R.id.postImage);
@@ -99,10 +128,20 @@ public class PostActivity extends AppCompatActivity {
         TextView postComment = findViewById(R.id.postComment);
         TextView postDate = findViewById(R.id.postDate);
 
+        String EXTRA_USERNAME = getIntent().getStringExtra("EXTRA_USERNAME");
+        Integer EXTRA_PICTURE = getIntent().hasExtra("EXTRA_PICTURE") ? getIntent().getIntExtra("EXTRA_PICTURE", 1) : null;
+        Integer EXTRA_POST = getIntent().hasExtra("EXTRA_POST") ? getIntent().getIntExtra("EXTRA_POST", 1) : null;
+
+        profilePicture.setImageResource(EXTRA_PICTURE);
+        profileUsername.setText(EXTRA_USERNAME);
+        postImage.setImageResource(EXTRA_POST);
+        postLike.setText(String.valueOf(random.nextInt(300)));
+        postUsername.setText(EXTRA_USERNAME);
+        postCaption.setText(captions[random.nextInt(comments.length)]);
+        postComment.setText(String.valueOf(comment_size));
+        postDate.setText(times[random.nextInt(comments.length)]);
 
         // Comments Section
-        Random random = new Random();
-        Integer comment_size = random.nextInt(10) + 1;
         for (int i = 0; i < comment_size; i++ ) {
             View commentView = LayoutInflater.from(this).inflate(R.layout.template_comment, null);
             Commentator commentator = commentators[random.nextInt(commentators.length)];
