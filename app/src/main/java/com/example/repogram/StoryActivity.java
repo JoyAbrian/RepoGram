@@ -2,7 +2,9 @@ package com.example.repogram;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,5 +50,14 @@ public class StoryActivity extends AppCompatActivity {
         profilePicture.setImageResource(account.getProfilePicture());
         profileUsername.setText(account.getUsername());
         storyTime.setText(times[random.nextInt(times.length)]);
+
+        profileUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StoryActivity.this, ProfileActivity.class);
+                intent.putExtra(ProfileActivity.EXTRA_ACCOUNT, account);
+                startActivity(intent);
+            }
+        });
     }
 }

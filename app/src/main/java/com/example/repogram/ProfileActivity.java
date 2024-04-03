@@ -11,6 +11,8 @@ import android.widget.TextView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
+    public static final String EXTRA_ACCOUNT = "OKE";
+    Account account;
     ImageView activeFooterItems;
     ImageView toggleHome;
     ImageView toggleSearch;
@@ -58,193 +60,73 @@ public class ProfileActivity extends AppCompatActivity {
         post8 = findViewById(R.id.post8);
         post9 = findViewById(R.id.post9);
 
-        String EXTRA_USERNAME = getIntent().getStringExtra("EXTRA_USERNAME");
-        Integer EXTRA_PICTURE = getIntent().hasExtra("EXTRA_PICTURE") ? getIntent().getIntExtra("EXTRA_PICTURE", 1) : null;
-        String EXTRA_POST = getIntent().getStringExtra("EXTRA_POST");
-        String EXTRA_FOLLOWERS = getIntent().getStringExtra("EXTRA_FOLLOWERS");
-        String EXTRA_FOLLOWING = getIntent().getStringExtra("EXTRA_FOLLOWING");
-        Integer EXTRA_POST1 = getIntent().hasExtra("EXTRA_POST1") ? getIntent().getIntExtra("EXTRA_POST1", 1) : null;
-        Integer EXTRA_POST2 = getIntent().hasExtra("EXTRA_POST2") ? getIntent().getIntExtra("EXTRA_POST2", 1) : null;
-        Integer EXTRA_POST3 = getIntent().hasExtra("EXTRA_POST3") ? getIntent().getIntExtra("EXTRA_POST3", 1) : null;
-        Integer EXTRA_POST4 = getIntent().hasExtra("EXTRA_POST4") ? getIntent().getIntExtra("EXTRA_POST4", 1) : null;
-        Integer EXTRA_POST5 = getIntent().hasExtra("EXTRA_POST5") ? getIntent().getIntExtra("EXTRA_POST5", 1) : null;
-        Integer EXTRA_POST6 = getIntent().hasExtra("EXTRA_POST6") ? getIntent().getIntExtra("EXTRA_POST6", 1) : null;
-        Integer EXTRA_POST7 = getIntent().hasExtra("EXTRA_POST7") ? getIntent().getIntExtra("EXTRA_POST7", 1) : null;
-        Integer EXTRA_POST8 = getIntent().hasExtra("EXTRA_POST8") ? getIntent().getIntExtra("EXTRA_POST8", 1) : null;
-        Integer EXTRA_POST9 = getIntent().hasExtra("EXTRA_POST9") ? getIntent().getIntExtra("EXTRA_POST9", 1) : null;
+//        String EXTRA_USERNAME = getIntent().getStringExtra("EXTRA_USERNAME");
+//        Integer EXTRA_PICTURE = getIntent().hasExtra("EXTRA_PICTURE") ? getIntent().getIntExtra("EXTRA_PICTURE", 1) : null;
+//        String EXTRA_POST = getIntent().getStringExtra("EXTRA_POST");
+//        String EXTRA_FOLLOWERS = getIntent().getStringExtra("EXTRA_FOLLOWERS");
+//        String EXTRA_FOLLOWING = getIntent().getStringExtra("EXTRA_FOLLOWING");
+//        Integer EXTRA_POST1 = getIntent().hasExtra("EXTRA_POST1") ? getIntent().getIntExtra("EXTRA_POST1", 1) : null;
+//        Integer EXTRA_POST2 = getIntent().hasExtra("EXTRA_POST2") ? getIntent().getIntExtra("EXTRA_POST2", 1) : null;
+//        Integer EXTRA_POST3 = getIntent().hasExtra("EXTRA_POST3") ? getIntent().getIntExtra("EXTRA_POST3", 1) : null;
+//        Integer EXTRA_POST4 = getIntent().hasExtra("EXTRA_POST4") ? getIntent().getIntExtra("EXTRA_POST4", 1) : null;
+//        Integer EXTRA_POST5 = getIntent().hasExtra("EXTRA_POST5") ? getIntent().getIntExtra("EXTRA_POST5", 1) : null;
+//        Integer EXTRA_POST6 = getIntent().hasExtra("EXTRA_POST6") ? getIntent().getIntExtra("EXTRA_POST6", 1) : null;
+//        Integer EXTRA_POST7 = getIntent().hasExtra("EXTRA_POST7") ? getIntent().getIntExtra("EXTRA_POST7", 1) : null;
+//        Integer EXTRA_POST8 = getIntent().hasExtra("EXTRA_POST8") ? getIntent().getIntExtra("EXTRA_POST8", 1) : null;
+//        Integer EXTRA_POST9 = getIntent().hasExtra("EXTRA_POST9") ? getIntent().getIntExtra("EXTRA_POST9", 1) : null;
 
-        username.setText(EXTRA_USERNAME);
-        profilePicture.setImageResource(EXTRA_PICTURE);
-        posts.setText(EXTRA_POST);
-        followers.setText(EXTRA_FOLLOWERS);
-        following.setText(EXTRA_FOLLOWING);
-        if (EXTRA_POST1 != null) {
-            post1.setImageResource(EXTRA_POST1.intValue());
-//            post1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST1);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        account = getIntent().getParcelableExtra(EXTRA_ACCOUNT);
+        username.setText(account.getUsername());
+        profilePicture.setImageResource(account.getProfilePicture());
+        posts.setText(account.getPosts());
+        followers.setText(account.getFollowers());
+        following.setText(account.getFollowing());
+        if (account.getPost1() != null) {
+            post1.setImageResource(account.getPost1());
+            post1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
+                    intent.putExtra(PostActivity.EXTRA_ACCOUNT, account);
+                    startActivity(intent);
+                }
+            });
         }
-        if (EXTRA_POST2 != null) {
-            post2.setImageResource(EXTRA_POST2.intValue());
-//            post2.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST2);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost2() != null) {
+            post2.setImageResource(account.getPost2());
         }
-        if (EXTRA_POST3 != null) {
-            post3.setImageResource(EXTRA_POST3.intValue());
-//            post3.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST3);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost3() != null) {
+            post3.setImageResource(account.getPost3());
         }
-        if (EXTRA_POST4 != null) {
-            post4.setImageResource(EXTRA_POST4.intValue());
-//            post4.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST4);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost4() != null) {
+            post4.setImageResource(account.getPost4());
         }
-        if (EXTRA_POST5 != null) {
-            post5.setImageResource(EXTRA_POST5.intValue());
-//            post5.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST5);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost5() != null) {
+            post5.setImageResource(account.getPost5());
         }
-        if (EXTRA_POST6 != null) {
-            post6.setImageResource(EXTRA_POST6.intValue());
-//            post6.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST6);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost6() != null) {
+            post6.setImageResource(account.getPost6());
         }
-        if (EXTRA_POST7 != null) {
-            post7.setImageResource(EXTRA_POST7.intValue());
-//            post7.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST7);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost7() != null) {
+            post7.setImageResource(account.getPost7());
         }
-        if (EXTRA_POST8 != null) {
-            post8.setImageResource(EXTRA_POST8.intValue());
-//            post8.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST8);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost8() != null) {
+            post8.setImageResource(account.getPost8());
         }
-        if (EXTRA_POST9 != null) {
-            post9.setImageResource(EXTRA_POST9.intValue());
-//            post9.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ProfileActivity.this, PostActivity.class);
-//
-//                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-//                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-//                    intent.putExtra("EXTRA_POST", EXTRA_POST9);
-//
-//                    startActivity(intent);
-//                }
-//            });
+        if (account.getPost9() != null) {
+            post9.setImageResource(account.getPost9());
         }
 
         if (username.getText().equals("joyrantepasang")) {
             activeFooterItems.setImageResource(R.drawable.footer_profile_active);
         } else {
-            activeFooterItems.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String EXTRA_USERNAME = "joyrantepasang";
-                    Integer EXTRA_PICTURE = R.drawable.profile_anonym;
-                    String EXTRA_POST = "5";
-                    String EXTRA_FOLLOWERS = "537";
-                    String EXTRA_FOLLOWING = "530";
-                    Integer EXTRA_POST1 = R.drawable.profile_joyrantepasang_post1;
-                    Integer EXTRA_POST2 = R.drawable.profile_joyrantepasang_post2;
-                    Integer EXTRA_POST3 = R.drawable.profile_joyrantepasang_post3;
-                    Integer EXTRA_POST4 = R.drawable.profile_joyrantepasang_post4;
-                    Integer EXTRA_POST5 = R.drawable.profile_joyrantepasang_post5;
-
-                    Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                    intent.putExtra("EXTRA_USERNAME", EXTRA_USERNAME);
-                    intent.putExtra("EXTRA_PICTURE", EXTRA_PICTURE);
-                    intent.putExtra("EXTRA_POST", EXTRA_POST);
-                    intent.putExtra("EXTRA_FOLLOWERS", EXTRA_FOLLOWERS);
-                    intent.putExtra("EXTRA_FOLLOWING", EXTRA_FOLLOWING);
-                    intent.putExtra("EXTRA_POST1", EXTRA_POST1);
-                    intent.putExtra("EXTRA_POST2", EXTRA_POST2);
-                    intent.putExtra("EXTRA_POST3", EXTRA_POST3);
-                    intent.putExtra("EXTRA_POST4", EXTRA_POST4);
-                    intent.putExtra("EXTRA_POST5", EXTRA_POST5);
-                    startActivity(intent);
-                }
-            });
+//            activeFooterItems.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+//                    startActivity(intent);
+//                }
+//            });
         }
 
         toggleHome.setOnClickListener(new View.OnClickListener() {

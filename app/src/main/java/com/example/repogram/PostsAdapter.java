@@ -1,5 +1,6 @@
 package com.example.repogram;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,16 +31,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull PostsAdapter.ViewHolder holder, int position) {
-        Account account = accounts.get(position);
-        holder.setData(account);
-    }
-
-    @Override
-    public int getItemCount() {
-        return accounts.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
         String[] captions = {
                 "Live, laugh, love. 💫",
                 "Chasing dreams and sunsets. 🌅",
@@ -69,6 +60,42 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 "17 jam"
         };
 
+        Random random = new Random();
+        Account account = accounts.get(position);
+        holder.profilePicture.setImageResource(account.getProfilePicture());
+        holder.profileUsername.setText(account.getUsername());
+        holder.postImage.setImageResource(account.getPost1());
+        holder.postLike.setText(String.valueOf(random.nextInt(300)));
+        holder.postUsername.setText(account.getUsername());
+        holder.postCaption.setText(captions[random.nextInt(captions.length)]);
+        holder.postComment.setText(String.valueOf(random.nextInt(200)));
+        holder.postDate.setText(times[random.nextInt(times.length)]);
+
+        holder.profileUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ProfileActivity.class);
+                intent.putExtra(ProfileActivity.EXTRA_ACCOUNT, account);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+
+        holder.postComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), PostActivity.class);
+                intent.putExtra(PostActivity.EXTRA_ACCOUNT, account);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return accounts.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private final CircleImageView profilePicture;
         private final TextView profileUsername;
         private final ImageView postImage;
@@ -89,18 +116,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             postCaption = itemView.findViewById(R.id.postCaption);
             postComment = itemView.findViewById(R.id.postComment);
             postDate = itemView.findViewById(R.id.postDate);
-        }
-
-        public void setData(Account account) {
-            Random random = new Random();
-            profilePicture.setImageResource(account.getProfilePicture());
-            profileUsername.setText(account.getUsername());
-            postImage.setImageResource(account.getPost1());
-            postLike.setText(String.valueOf(random.nextInt(300)));
-            postUsername.setText(account.getUsername());
-            postCaption.setText(captions[random.nextInt(captions.length)]);
-            postComment.setText(String.valueOf(random.nextInt(200)));
-            postDate.setText(times[random.nextInt(times.length)]);
         }
     }
 }
