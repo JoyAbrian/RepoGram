@@ -1,5 +1,6 @@
 package com.example.repogram;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,16 @@ public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull StoriesAdapter.ViewHolder holder, int position) {
         Account account = accounts.get(position);
-        holder.setData(account);
+        holder.profilePicture.setImageResource(account.getProfilePicture());
+        holder.profileUsername.setText(account.getUsername());
+        holder.profilePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), StoryActivity.class);
+                intent.putExtra(StoryActivity.EXTRA_ACCOUNT, account);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -47,11 +57,6 @@ public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.ViewHold
             super(itemView);
             profilePicture = itemView.findViewById(R.id.profilePicture);
             profileUsername = itemView.findViewById(R.id.profileUsername);
-        }
-
-        public void setData(Account account) {
-            profilePicture.setImageResource(account.getProfilePicture());
-            profileUsername.setText(account.getUsername());
         }
     }
 }
