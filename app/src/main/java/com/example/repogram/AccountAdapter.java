@@ -1,5 +1,6 @@
 package com.example.repogram;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -8,25 +9,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.ViewHolder> {
+    private final ArrayList<Account> accounts;
+
+    public AccountAdapter(ArrayList<Account> accounts) {
+        this.accounts = accounts;
+    }
+
     @NonNull
     @Override
     public AccountAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.template_post, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AccountAdapter.ViewHolder holder, int position) {
-
+        Account account = accounts.get(position);
+        holder.setData(account);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return accounts.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

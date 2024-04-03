@@ -1,15 +1,17 @@
 package com.example.repogram;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     ImageView activeFooterItems;
-    ImageView toggleHome;
     ImageView toggleSearch;
     ImageView toggleAdd;
     ImageView toggleReels;
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         toggleAdd = findViewById(R.id.toggleAdd);
         toggleReels = findViewById(R.id.toggleReels);
         toggleProfile = findViewById(R.id.toggleProfile);
+
+        RecyclerView rvPosts = findViewById(R.id.rvPosts);
+        rvPosts.setHasFixedSize(true);
+        rvPosts.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        AccountAdapter adapter = new AccountAdapter(DataSource.accounts);
+        rvPosts.setAdapter(adapter);
 
         activeFooterItems.setImageResource(R.drawable.footer_home_active);
 
