@@ -139,9 +139,9 @@ public class PostActivity extends AppCompatActivity {
         postImage.setImageResource(account.getPost1());
         postLike.setText(String.valueOf(random.nextInt(300)));
         postUsername.setText(account.getUsername());
-        postCaption.setText(captions[random.nextInt(comments.length - 1)]);
+        postCaption.setText(captions[random.nextInt(captions.length)]);
         postComment.setText(String.valueOf(comment_size));
-        postDate.setText(times[random.nextInt(comments.length - 1)]);
+        postDate.setText(times[random.nextInt(times.length)]);
 
         postHeart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,7 +160,7 @@ public class PostActivity extends AppCompatActivity {
         // Comments Section
         for (int i = 0; i < comment_size; i++ ) {
             View commentView = LayoutInflater.from(this).inflate(R.layout.template_comment, null);
-            Commentator commentator = commentators[random.nextInt(commentators.length - 1)];
+            Commentator commentator = commentators[random.nextInt(commentators.length)];
 
             CircleImageView userPicture = commentView.findViewById(R.id.userPicture);
             TextView userName = commentView.findViewById(R.id.userName);
@@ -170,8 +170,8 @@ public class PostActivity extends AppCompatActivity {
 
             userPicture.setImageResource(commentator.getUserPicture());
             userName.setText(commentator.getUserName());
-            userTime.setText(times[random.nextInt(times.length - 1)]);
-            userComment.setText(comments[random.nextInt(comments.length - 1)]);
+            userTime.setText(times[random.nextInt(times.length)]);
+            userComment.setText(comments[random.nextInt(comments.length)]);
             userLikes.setText(String.valueOf(random.nextInt(99)));
 
             parents.addView(commentView);
