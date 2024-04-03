@@ -10,6 +10,7 @@
         android:background="#FBFBFB">
 
         <ImageButton
+            android:id="@+id/toggleBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="fitCenter"

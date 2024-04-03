@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     ImageView activeFooterItems;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rvPosts = findViewById(R.id.rvPosts);
         rvPosts.setHasFixedSize(true);
         rvPosts.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        AccountAdapter adapter = new AccountAdapter(DataSource.accounts);
+        PostsAdapter adapter = new PostsAdapter(DataSource.accounts);
         rvPosts.setAdapter(adapter);
 
         activeFooterItems.setImageResource(R.drawable.footer_home_active);

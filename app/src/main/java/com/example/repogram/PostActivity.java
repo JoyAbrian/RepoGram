@@ -127,6 +127,7 @@ public class PostActivity extends AppCompatActivity {
         TextView postCaption = findViewById(R.id.postCaption);
         TextView postComment = findViewById(R.id.postComment);
         TextView postDate = findViewById(R.id.postDate);
+        ImageView toggleBack = findViewById(R.id.toggleBack);
 
         String EXTRA_USERNAME = getIntent().getStringExtra("EXTRA_USERNAME");
         Integer EXTRA_PICTURE = getIntent().hasExtra("EXTRA_PICTURE") ? getIntent().getIntExtra("EXTRA_PICTURE", 1) : null;
@@ -148,7 +149,12 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        
+        toggleBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Comments Section
         for (int i = 0; i < comment_size; i++ ) {
