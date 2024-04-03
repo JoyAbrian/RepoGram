@@ -10,12 +10,14 @@
         android:layout_height="wrap_content">
         
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePicture"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/profile_anonym"
             android:layout_margin="10dp"/>
 
         <TextView
+            android:id="@+id/profileUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -26,6 +28,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/postImage"
         android:layout_width="match_parent"
         android:layout_height="280dp"
         android:scaleType="fitCenter"
@@ -67,6 +70,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/postLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -90,6 +94,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/postUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -98,6 +103,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/postCaption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -119,6 +125,7 @@
             android:textColor="#535353"/>
 
         <TextView
+            android:id="@+id/postComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -137,6 +144,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/postDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="15 Januari 2022"
