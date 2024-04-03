@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/post5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/profile_anonym" />
+
+        <TextView
+            android:id="@+id/profileUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="username"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/storyTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="12 Januari 2022"
+            android:textColor="#606060"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/story_footer"
+        android:layout_gravity="bottom"/>
+
+</FrameLayout>
