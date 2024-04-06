@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         rvPosts.setHasFixedSize(true);
         rvPosts.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rvPosts.setNestedScrollingEnabled(false);
         PostsAdapter postsAdapter = new PostsAdapter(DataSource.accounts);
         rvPosts.setAdapter(postsAdapter);
 
